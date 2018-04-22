@@ -24,3 +24,8 @@ def evaluate_accuracy(data_iterator, net):
 		output = net(data)
 		acc += accuracy(output, label)
 	return acc / len(data_iterator)
+
+
+def SGD(params, lr):
+	for param in params:
+		param[:] = param - lr * param.grad
